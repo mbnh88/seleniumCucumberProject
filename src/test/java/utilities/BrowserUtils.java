@@ -13,7 +13,7 @@ public class BrowserUtils {
 	
 	Alert alert;
 	WebDriverWait letswait;
-	static Select letsSelect;
+	 Select letsSelect;
 
 	public void switchToAlert() {
 		alert = Driver.getDriver().switchTo().alert();
@@ -45,7 +45,7 @@ public class BrowserUtils {
 		letswait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
-	public static void selectByVisibleText(WebElement element, String optionToSelect) {
+	public  void selectByVisibleText(WebElement element, String optionToSelect) {
 		letsSelect = new Select(element);
 		letsSelect.selectByVisibleText(optionToSelect);
 	}
