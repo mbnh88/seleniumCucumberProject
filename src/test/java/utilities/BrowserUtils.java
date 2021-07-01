@@ -4,13 +4,14 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BrowserUtils {
 	
-	
+	Actions action;
 	Alert alert;
 	WebDriverWait letswait;
 	 Select letsSelect;
@@ -64,5 +65,13 @@ public class BrowserUtils {
 			return false;
 		}
 		return true;
+	}
+	public void dragAndDrop(WebElement sourceElement, WebElement targetElement) {
+		action = new Actions(Driver.getDriver());
+		action.dragAndDrop(sourceElement, targetElement).perform();
+	}
+	public void hoverToElement(WebElement element) {
+		action = new Actions(Driver.getDriver());
+		action.moveToElement(element).perform();
 	}
 }
